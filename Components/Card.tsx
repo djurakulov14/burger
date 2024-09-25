@@ -21,7 +21,6 @@ const Card = (props: Props) => {
             <div className="bot flex flex-col gap-2">
                 <span className="text-[#B1B1B1]">520г</span>
                 <button className="bg-[#F2F2F3] rounded-xl py-3" onClick={() => setVisible(true)}>Добавить</button>
-              <span>hello</span>
             </div>
         </div>
         <MyModal visible={visible} setVisible={setVisible}>

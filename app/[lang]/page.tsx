@@ -12,9 +12,7 @@ export default async function Home({
 
   const res = await fetch("http://localhost:3000/api/menu")
   const data = await res.json()
-  
-  console.log(data);
-  
+    
 
   return (
     <>
@@ -22,9 +20,7 @@ export default async function Home({
 		<h1 className="font-bold text-[40px]">{translation.header.mainTitle}</h1>
       <div className=" flex flex-wrap gap-8">
         {
-          data.data.map((item:any) => {      
-            <Card/>    
-          })
+          data.data.map((item:any) => <Card key={item.id}/>)
         }
       </div>
 
