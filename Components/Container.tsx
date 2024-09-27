@@ -1,4 +1,3 @@
-"use client"
 import * as React from 'react';
 import Card from './Card';
 
@@ -17,7 +16,7 @@ const Container: React.FunctionComponent<IContainerProps> = async (props) => {
     <>
     <div className=" flex flex-wrap gap-8">
         {
-          data.data.map((item:any) => <Card key={item.id}/>)
+          data.data.map((item:any) => <Card key={item.id} {...item}/>)
         }
     </div>
     </>

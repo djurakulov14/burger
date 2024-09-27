@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import "../globals.css";
 import Image from "next/image";
 import Categories from "../../Components/Categories";
+import { useEffect, useState } from "react";
+import { Menu } from "@/models/menu";
+import { Category } from "@/models/category";
+import CategoryLine from "@/Components/CategoryLine";
 
 export const metadata: Metadata = {
   title: "Burgers",
@@ -13,6 +17,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="ru">
       <body className=" bg-[#F9F9F9]">
@@ -30,17 +35,7 @@ export default function RootLayout({
 				</div>
 			</header>
 			<div className=" container m-auto flex justify-between">
-				<Categories/>
-				<Categories/>
-				<Categories/>
-				<Categories/>
-				<Categories/>
-				<Categories/>
-				<Categories/>
-				<Categories/>
-				<Categories/>
-				<Categories/>
-				<Categories/>
+				<CategoryLine/>
 			</div>
 			<div className="flex justify-between gap-5 items-start">
 				<aside className="w-[18%] h-fit py-[24px] px-[16px] bg-white sticky left-6 top-10 mt-10 rounded-xl">

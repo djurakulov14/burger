@@ -20,7 +20,7 @@ export default async function Home({
 		<h1 className="font-bold text-[40px]">{translation.header.mainTitle}</h1>
       <div className=" flex flex-wrap gap-8">
         {
-          data.data.map((item:any) => <Card key={item.id}/>)
+          data.data.map((item:any) => <Card key={item.id} {...item}/>)
         }
       </div>
 

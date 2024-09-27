@@ -1,3 +1,4 @@
+import Link from "next/link"
 import "../globals.css"
 
 export const metadata = {
@@ -12,7 +13,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      	<body className=" bg-[#F9F9F9]">
+			<aside className="w-[20%] fixed left-0 top-0 h-full bg-orange-400 p-3">
+				<h1 className="text-5xl font-bold mb-10">Admin</h1>
+				<nav className=" flex flex-col gap-2">
+					<Link className=" text-2xl font-semibold p-2 bg-[#ffffff30] rounded-xl" href={'/admin/menu/'}>Menu</Link>
+					<Link className=" text-2xl font-semibold p-2 bg-[#ffffff30] rounded-xl" href={'/admin/category/'}>Category</Link>
+					{/* <Link href={'/admin/menu/'}>Menu</Link> */}
+				</nav>
+			</aside>
+        	<div className="w-[80%] ml-[20%]">
+				{children}
+			</div>
+		</body>
     </html>
   )
 }

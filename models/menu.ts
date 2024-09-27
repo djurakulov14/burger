@@ -11,4 +11,5 @@ export type Menu = {
     weight: string;
     images: string[];
     composition: string;
+    categotyId: number,
 }

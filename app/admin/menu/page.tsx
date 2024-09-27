@@ -1,27 +1,28 @@
-"use client"
 import Card from '@/Components/Card';
 import Container from '@/Components/Container';
 import FormAdd from '@/Components/FormAdd';
+import Modal from '@/Components/Modal';
 import MyModal from '@/Components/MyModal/MyModal';
 import * as React from 'react';
 import { IoMdAdd } from "react-icons/io";
 
 const Menu: React.FunctionComponent = () => {
-  const [visible, setVisible] = React.useState(false)
-
 
   return (
     <>
-    <header className='w-full bg-black p-5 text-white flex justify-center items-center'>
-        <IoMdAdd size={40} onClick={() => setVisible(true)} className='cursor-pointer'/>
+    <header className='w-full p-5 flex justify-between items-center'>
+		<h1 className=' text-5xl font-bold'>
+			Menu
+		</h1>
+      <Modal>
+        <IoMdAdd size={40} className='cursor-pointer'/>
+      </Modal>
     </header>
-    <div className="main h-full">
+    <div className="main h-full p-5">
 		<h1 className="font-bold text-[40px]">Burgers</h1>  
         <Container/>
-	</div>
-    <MyModal visible={visible} setVisible={setVisible}>
-        <FormAdd setVisible={setVisible}/>
-    </MyModal>
+	  </div>
+
     </>
   );
 };
